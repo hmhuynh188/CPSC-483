@@ -1,8 +1,22 @@
 # part 1 - data preparation
 import numpy as np
-from sklearn.model_selection import train_test_split
 import tensorflow as tf
 import matplotlib.pyplot as plt
+
+x_values = np.linspace(-100, 100, num=1000)
+y_values = x_values * np.sin(x_values * 2300)
+
+def build_model(input_shape, hidden_units):
+    model = tf.keras.Sequential([
+        tf.keras.layers.Dense(hidden_units, activation='relu', input_shape=(input_shape,)),
+        tf.keras.layers.Dense(hidden_units, activation='relu'),
+        tf.keras.layers.Dense(1)
+    ])
+    model.compile(optimizer='adam', loss='mse')
+    return model
+
+# Split data into training and test sets
+x_train, x_test, y_train, y_test = train_test_split(x_values, y_values, test_size=0.6, random_state=42)
 
 # part 2 - build models 
 # model 1 
