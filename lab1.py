@@ -1,7 +1,6 @@
 # part 1 - data preparation
 import numpy as np
 import tensorflow as tf
-import matplotlib.pyplot as plt
 
 x_values = np.linspace(-100, 100, num=1000)
 y_values = x_values * np.sin(x_values * 2300)
