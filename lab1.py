@@ -2,9 +2,6 @@
 import numpy as np
 import tensorflow as tf
 
-x_values = np.linspace(-100, 100, num=1000)
-y_values = x_values * np.sin(x_values * 2300)
-
 def build_model(input_shape, hidden_units):
     model = tf.keras.Sequential([
         tf.keras.layers.Dense(hidden_units, activation='relu', input_shape=(input_shape,)),
@@ -31,11 +28,6 @@ model_3 = build_model(1, 32)
 model_3.fit(x_train, y_train, epochs=100, batch_size=32, validation_split=0.2)
 
 # part 3 - model evaluation 
-loss_1 = model_1.evaluate(x_test, y_test)
-loss_2 = model_2.evaluate(x_test, y_test)
-loss_3 = model_3.evaluate(x_test, y_test)
-
-
 plt.scatter(x_test, y_test, color='blue', label='True Function')
 plt.scatter(x_test, model_1.predict(x_test), color='red', label='Model 1 Predictions')
 plt.scatter(x_test, model_2.predict(x_test), color='green', label='Model 2 Predictions')
