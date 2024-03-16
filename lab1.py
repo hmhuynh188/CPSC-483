@@ -8,7 +8,6 @@ import matplotlib.pyplot as plt
 x_values = np.linspace(-100, 100, num=100)
 y_values = x_values * np.sin(x_values * 100)
 
-# Step 2: Build and Train Models
 def build_model(input_shape, hidden_units):
     model = tf.keras.Sequential([
         tf.keras.layers.Dense(hidden_units, activation='relu', input_shape=(input_shape,)),
