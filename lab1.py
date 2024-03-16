@@ -50,6 +50,8 @@ plt.title('Model Predictions Comparison')
 best_model = model_1 if loss_1 < loss_2 and loss_1 < loss_3 else model_2 if loss_2 < loss_3 else model_3
 weights = best_model.get_weights()
 chosen_indices = np.random.choice(len(x_train), 5)
+chosen_data = x_train[chosen_indices]
 model_predictions = best_model.predict(chosen_data)
+chosen_data = x_train[chosen_indices]
 for i in range(len(chosen_data)):
     print("Model Prediction Result:", model_predictions[i][0])
