@@ -5,8 +5,8 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 
 # Step 1: Generate Training Data
-x_values = np.linspace(-100, 100, num=1000)
-y_values = x_values * np.sin(x_values * 2300)
+x_values = np.linspace(-100, 100, num=100)
+y_values = x_values * np.sin(x_values * 100)
 
 # Step 2: Build and Train Models
 def build_model(input_shape, hidden_units):
@@ -48,7 +48,6 @@ plt.title('Model Predictions Comparison')
 
 # part 4 - get model output and feedforward by yourself
 best_model = model_1 if loss_1 < loss_2 and loss_1 < loss_3 else model_2 if loss_2 < loss_3 else model_3
-weights = best_model.get_weights()
 chosen_indices = np.random.choice(len(x_train), 5)
 chosen_data = x_train[chosen_indices]
 model_predictions = best_model.predict(chosen_data)
