@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 # Step 1: Generate Training Data
 x_values = np.linspace(-100, 100, num=100)
-y_values = x_values * np.sin(x_values * 100)
+y_values = x_values * np.sin(x_values * 2300)
 
 def build_model(input_shape, hidden_units):
     model = tf.keras.Sequential([
