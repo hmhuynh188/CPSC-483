@@ -31,10 +31,6 @@ model_3 = build_model(1, 32)
 model_3.fit(x_train, y_train)
 
 # part 3 - model evaluation 
-loss_1 = model_1.evaluate(x_test, y_test)
-loss_2 = model_2.evaluate(x_test, y_test)
-loss_3 = model_3.evaluate(x_test, y_test)
-
 plt.scatter(x_test, y_test, color='blue', label='True Function')
 plt.scatter(x_test, model_1.predict(x_test), color='red', label='Model 1 Predictions')
 plt.scatter(x_test, model_2.predict(x_test), color='green', label='Model 2 Predictions')
